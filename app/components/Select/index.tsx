@@ -9,10 +9,10 @@ interface SelectProps {
   onChange: (value: string) => void;
   labelClassName?: string;
   selectClassName?: string;
-  defaultValue?: string;
+  defaultValue?: string | undefined;
 }
 
-const Select: React.FC<SelectProps> = ({ options, onChange, labelClassName, selectClassName, defaultValue, label }) => {
+const Select: React.FC<SelectProps> = ({ options, onChange, labelClassName, selectClassName, defaultValue = "", label }) => {
   return (
     <>
       <label className={labelClassName || selectDefaultCss.label}>{label}</label>

@@ -1,5 +1,5 @@
 import React from "react";
-import { textareaFieldDefaultCss, textareaFieldDefaultPlaceholder } from "@/config/components/textAreaField";
+import { textareaFieldDefaultCss, textareaFieldDefaultPlaceholder } from "@/config/components/textareaField";
 
 interface TextAreaFieldProps {
   label: string;
