@@ -11,7 +11,8 @@ interface InputFieldProps {
   errorTextClass?: string;
   labelClass?: string;
   inputType?: string;
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  readonly?: boolean;
+  onChange: (value: string) => void;
 }
 
 const InputField: React.FC<InputFieldProps> = (props) => {
@@ -19,9 +20,9 @@ const InputField: React.FC<InputFieldProps> = (props) => {
   return (
     <div>
       <label className={props.labelClass || inputFieldDefaultCss.label}>{props.label}</label>
-      <input id={props.id} type={props.inputType || inputFieldDefaultType} placeholder={props.placeholder || ""} 
+      <input disabled={props.readonly} id={props.id} type={props.inputType || inputFieldDefaultType} placeholder={props.placeholder || ""} 
         className={!!props.errorMessage ? (props.errorInputClass || inputFieldDefaultCss.errorInput) : (props.inputClass || inputFieldDefaultCss.input)}
-        onChange={props.onChange}
+        onChange={(e) => props.onChange(e.target.value)}
         />
       {!!props.errorMessage
       ? (
