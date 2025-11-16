@@ -16,10 +16,11 @@ const Select: React.FC<SelectProps> = ({ options, onChange, labelClassName, sele
   return (
     <>
       <label className={labelClassName || selectDefaultCss.label}>{label}</label>
-      <select className={selectClassName || selectDefaultCss.select} onChange={(e) => onChange(e.target.value)}>
-        <option selected={!defaultValue} ></option>
-        {options.map((option, index) => (
-          <option key={index} value={option.value} selected={defaultValue === option.value} >{option.name}</option>
+      <select className={selectClassName || selectDefaultCss.select} defaultValue={defaultValue} onChange={(e) => onChange(e.target.value)}>
+        {/* Adding a blank option to the first element */}
+        <option></option> 
+        {options.map(({ name, value }, index) => (
+          <option key={index} value={value} >{name}</option>
         ))}
       </select>
     </>
