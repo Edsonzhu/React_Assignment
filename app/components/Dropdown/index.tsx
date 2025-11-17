@@ -27,18 +27,19 @@ const Dropdown: React.FC<DropdownProps> = ({ label, options, onClick, component 
     }
   }, [])
 
-  const handleToggleMenu = () => {
-    setIsOpen((status) => (!status))
-  }
-
   const handleOptionClick = (value: string | number) => {
-    handleToggleMenu();
+    setIsOpen(false)
     onClick(value);
   }
 
   return (
-    <div className={DropdownDefaultCss.wraper} >
-      <button onClick={handleToggleMenu} className={DropdownDefaultCss.button} >
+    <div className={DropdownDefaultCss.wraper}
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
+      <button 
+        className={DropdownDefaultCss.button}
+      >
         {label && <span>{label}</span>}
         <ArrowDownIcon />
       </button>
