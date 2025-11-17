@@ -89,7 +89,11 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ review, onSubmit }) => {
     event.preventDefault();
     if (isFormValid()) 
     {
-      onSubmit(reviewObj);
+      onSubmit({
+        ...reviewObj,
+        dateCreated: reviewObj.dateCreated || new Date().toISOString(),
+        dateUpdated: new Date().toISOString()
+      });
     }
   };
 
