@@ -3,6 +3,7 @@ import { reviewFormAllowedComponents } from "@/constants/reviewForm";
 // Review Properties Interface and Configuration
 export interface ReviewProps
 {
+  id: string,
   title: string,
   description: string,
   comments?: string,

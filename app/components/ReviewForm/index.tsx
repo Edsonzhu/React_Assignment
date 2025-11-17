@@ -15,7 +15,7 @@ import StarRating from "@/components/StarRating";
 import Button, { ButtonTypes } from "@/components/Button";
 
 // utils
-import { checkRegex } from "@/utils";
+import { checkRegex, generateId } from "@/utils";
 
 interface ReviewFormProps {
   review: ReviewProps | null;
@@ -91,8 +91,9 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ review, onSubmit }) => {
     {
       onSubmit({
         ...reviewObj,
-        dateCreated: reviewObj.dateCreated || new Date().toISOString(),
-        dateUpdated: new Date().toISOString()
+        id: reviewObj.id || generateId(),
+        dateCreated: reviewObj.dateCreated || new Date().toLocaleString(),
+        dateUpdated: new Date().toLocaleString()
       });
     }
   };
