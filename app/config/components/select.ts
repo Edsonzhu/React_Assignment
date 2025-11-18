@@ -1,0 +1,4 @@
+export const selectDefaultCss = {
+  label: "block mb-2.5 text-sm font-medium text-heading",
+  select: "block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body mb-4",
+}
