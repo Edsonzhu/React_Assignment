@@ -80,5 +80,5 @@ npm run dev
 Visit `http://localhost:5173` to access the application.
 
 ## GitHub Repository
-[RBC_React_Assignment](https://github.com/Edsonzhu/RBC_React_Assignment)
+[React_Assignment](https://github.com/Edsonzhu/React_Assignment)
 
